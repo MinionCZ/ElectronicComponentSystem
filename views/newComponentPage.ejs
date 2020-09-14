@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/javascripts/navigation.js"></script>
+
+</head>
+<header>
+    <button type="button" class="navBtn" id="mainPage" onclick="toMainPage()">Overview</button>
+    <button type="button" class="navBtn" id="mainPage" onclick="toProjectsPage()">Projects</button>
+    <button type="button" class="navBtn" id="mainPage" onclick="toComponentsPage()">Components</button>
+    <button type="button" class="navBtn" id="mainPage" onclick="toChangesPage()">Changes History</button>
+    <button type="button" class="navBtn" id="mainPage" onclick="openComponentWindow()">Add Component</button>
+</header>
+
+<body>
+    <div>
+        <form method="POST" action="/newComponent">
+            <label for="name">Name of component:</label>
+            <br>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="type">Type of component:</label>
+            <br>
+            <input type="text" id="type" name="type" required>
+            <br>
+            <label for="packageType">Package type:</label>
+            <br>
+            <select name="packageType" id="packageType">
+                <option>THT</option>
+                <option>SMD</option>
+            </select>
+            <br>
+            <label for="package">Package:</label>
+            <br>
+            <input type="text" id="package" name="package" required>
+            <br>
+            <label for="quntity">Quantity:</label>
+            <br>
+            <input type="text" id="quntity" name="quntity" required>
+            <br>
+            <label for="quntity">Quantity:</label>
+            <br>
+            <input type="text" id="quntity" name="quntity" required>
+            <br>
+            <label for="datasheets">Data sheets:</label>
+            <br>
+            <input type="text" id="datasheets" name="datasheets" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,20 +1,29 @@
 function toMainPage() {
     let location = window.location.toString()
-window.location = cropQuery(location, "/")
+    window.location = cropQuery(location, "/")
 }
-function toComponentsPage(){
+
+function toComponentsPage() {
     let location = window.location.toString()
     window.location = cropQuery(location, "/components")
 }
-function toChangesPage(){
+
+function toChangesPage() {
     let location = window.location.toString()
     window.location = cropQuery(location, "/changes")
 }
 
-function toProjectsPage(){
+function toProjectsPage() {
     let location = window.location.toString()
     window.location = cropQuery(location, "/projects")
 }
+
+function openComponentWindow() {
+    let location = window.location.toString()
+    let newQuery = cropQuery(location, "/newComponent");
+    window.location = newQuery
+}
+
 function cropQuery(location, targetLocation) {
     let newLocation = ""
     let counter = 0
