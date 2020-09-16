@@ -3,6 +3,7 @@
 
 <head>
     <script src="/javascripts/navigation.js"></script>
+    <script src="/javascripts/componentsFilter.js"></script>
 
 </head>
 <header>
@@ -11,9 +12,71 @@
     <button type="button" class="navBtn" id="mainPage" onclick="toComponentsPage()">Components</button>
     <button type="button" class="navBtn" id="mainPage" onclick="toChangesPage()">Changes History</button>
     <button type="button" class="navBtn" id="mainPage" onclick="openComponentWindow()">Add Component</button>
-
 </header>
+
 <body>
+    <div>
+        <% if(partsCount === 0){ %>
+        <h4>No components in your database</h4>
+        <% }else{ %>
+            <div>
+
+
+
+            </div>
+        <table>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    Type:
+                </th>
+                <th>
+                    Package type:
+                </th>
+                <th>
+                    Package:
+                </th>
+                <th>
+                    Quantity:
+                </th>
+                <th>
+                    Date of last change:
+                </th>
+            </tr>
+            <% for(let i = 0; i < allParts.length; i++){ %>
+                <tr>
+                    <input type="hidden" id="component<%=i%>" value="<%= allParts[i].name %>;<%= allParts[i].type %>;<%= allParts[i].packageType%>;<%= allParts[i].pack%>;<%= allParts[i].quantity %>;<%= allParts[i].dateOfChange %>;">
+                    <td> 
+                        <%= allParts[i].name %> 
+                    </td>
+                    <td>
+                        <%= allParts[i].type %> 
+                    </td>
+                    <td>
+                        <%= allParts[i].packageType %> 
+                    </td>
+                    <td>
+                        <%= allParts[i].pack %> 
+                    </td>
+                    <td>
+                        <%= allParts[i].quantity %> 
+                    </td>
+
+                    <td>
+                        <%= allParts[i].dateOfChange %> 
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <script>
+            initValues(<%= partsCount%>)
+        </script>
+        <% } %>
+
+
+    </div>
 
 </body>
 

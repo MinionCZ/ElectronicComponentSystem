@@ -18,38 +18,41 @@
         <form method="POST" action="/newComponent">
             <label for="name">Name of component:</label>
             <br>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="<%= componentInfo.name%>" required>
             <br>
             <label for="type">Type of component:</label>
             <br>
-            <input type="text" id="type" name="type" required>
+            <input type="text" id="type" name="type" value="<%= componentInfo.type%>" required>
             <br>
-            <label for="packageType">Package type:</label>
+            <label for=" packageType">Package type:</label>
             <br>
+
             <select name="packageType" id="packageType">
-                <option>THT</option>
+                <%if(componentInfo.packageType === "" || componentInfo.packageType === "THT"){%>
+                <option selected>THT</option>
                 <option>SMD</option>
+                <%}else{%>
+                <option>THT</option>
+                <option selected>SMD</option>
+                <%}%>
             </select>
             <br>
             <label for="package">Package:</label>
             <br>
-            <input type="text" id="package" name="package" required>
-            <br>
-            <label for="quntity">Quantity:</label>
-            <br>
-            <input type="text" id="quntity" name="quntity" required>
-            <br>
-            <label for="quntity">Quantity:</label>
-            <br>
-            <input type="text" id="quntity" name="quntity" required>
-            <br>
-            <label for="datasheets">Data sheets:</label>
-            <br>
-            <input type="text" id="datasheets" name="datasheets" required>
-            <button type="submit">Submit</button>
+            <input type="text" id="package" name="package" value="<%= componentInfo.pack%>" required>
+                <br>
+                <label for="quantity">Quantity:</label>
+                <br>
+                <input type="text" id="quantity" name="quantity" value="<%= componentInfo.quantity%>" required>
+                <br>
+                <label for="datasheets">Data sheets:</label>
+                <br>
+                <input type="text" id="datasheets" name="datasheets" value="<%= componentInfo.datasheets%>" required>
+                <br>
+                <button type="submit">Submit</button>
         </form>
     </div>
-
+    <h4><%= error%></h4>
 
 </body>
 
