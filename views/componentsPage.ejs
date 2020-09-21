@@ -19,12 +19,25 @@
         <% if(partsCount === 0){ %>
         <h4>No components in your database</h4>
         <% }else{ %>
-            <div>
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy" onchange="createTable()">
+                <option value="name">Name</option>
+                <option value="type">Type</option>
+                <option value="date">Date</option>
+                <option value="packageType">Package type</option>
+                <option value="quantity">Quantity</option>
+                <option value="package">Package</option>
+            </select>
+            <label for="orderBy">Order:</label>
+            <select id="orderBy">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <br>
 
 
 
-            </div>
-        <table>
+        <table id="componetsTable">
             <tr>
                 <th>
                     Name:
@@ -51,7 +64,7 @@
                     <td> 
                         <%= allParts[i].name %> 
                     </td>
-                    <td>
+                   <td>
                         <%= allParts[i].type %> 
                     </td>
                     <td>
